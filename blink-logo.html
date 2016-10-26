@@ -1,27 +1,54 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="/elements/iron-image/iron-image.html">
 
+<!--
+    Blink Technologies Logo
+
+    DIsplay the logo up to 400 px in width
+-->
 <dom-module id="blink-logo">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
-  </template>
+    <template>
+        <style>
+            :host {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                max-width: 400px;
+            }
+        </style>
 
-  <script>
-    Polymer({
+        <span class="drawer-size" title="{{alt}}">
+            <iron-image alt="Blink Technologies" src="{{image}}"
+                width="{{width}}" height="{{height}}" sizing="contain"></iron-image>
+        </span>
 
-      is: 'blink-logo',
+    </template>
 
-      properties: {
-        prop1: {
-          type: String,
-          value: 'blink-logo',
-        },
-      },
-
-    });
-  </script>
+    <script type="text/javascript">
+        Polymer({
+            is: 'blink-logo',
+            properties: {
+                /** Width of the Logo */
+                width: {
+                    type: String,
+                    value: '56px',
+                },
+                /** Height of the Logo */
+                height: {
+                    type: String,
+                    value: '56px',
+                },
+                /** Default path for Logo */
+                image: {
+                    type: String,
+                    value: '/media/img/logo.png'
+                },
+                /** Alternate text for Logo */
+                alt: {
+                    type: String,
+                    value: 'Blink Technologies Pte Ltd'
+                }
+            }
+        });
+    </script>
 </dom-module>
