@@ -1,0 +1,27 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="blink-logo">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'blink-logo',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'blink-logo',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
