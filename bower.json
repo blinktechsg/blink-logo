@@ -1,6 +1,6 @@
 {
   "name": "blink-logo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "To display Blink Technologies Logo",
   "main": "blink-logo.html",
   "dependencies": {
