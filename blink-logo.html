@@ -4,6 +4,7 @@
     Blink Technologies Logo
 
     Display the logo up to 400 px in width
+    @demo
 -->
 <dom-module id="blink-logo">
     <template>
@@ -17,9 +18,9 @@
             }
         </style>
 
-        <span class="drawer-size" title="{{alt}}">
-            <iron-image alt="Blink Technologies" src="{{image}}"
-                width="{{width}}" height="{{height}}" sizing="contain"></iron-image>
+        <span class="drawer-size" title="[[alt]]">
+            <iron-image alt="Blink Technologies" src="[[image]]"
+                width="[[width]]" height="[[height]]" sizing="contain"></iron-image>
         </span>
 
     </template>
@@ -41,13 +42,17 @@
                 /** Default path for Logo */
                 image: {
                     type: String,
-                    value: 'blinktech.png'
+                    value: '',
                 },
                 /** Alternate text for Logo */
                 alt: {
                     type: String,
                     value: 'Blink Technologies Pte Ltd'
                 }
+            },
+            ready: function() {
+                if (this.image == '')
+                    this.image = this.resolveUrl('./images/blinktech.png');
             }
         });
     </script>
